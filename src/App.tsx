@@ -9,33 +9,17 @@
  */
 
 import React from "react";
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View
-} from "react-native";
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions
-} from "react-native/Libraries/NewAppScreen";
-import { useSelector } from "react-redux";
+import { SafeAreaView, StatusBar, useColorScheme } from "react-native";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 import { Provider } from "react-redux";
-import { NewsList } from "./screens/NewsList";
 import { store } from "./redux/store";
+import { NewsList } from "./screens/NewsList";
 
 const App = () => {
   return (
     <Provider store={store}>
-      <SafeAreaView style={Colors.lighter}>
-        <StatusBar barStyle={"dark-content"} />
+      <SafeAreaView>
+        <StatusBar />
         <NewsList />
       </SafeAreaView>
     </Provider>
