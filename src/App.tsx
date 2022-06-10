@@ -32,16 +32,10 @@ import { NewsList } from "./screens/NewsList";
 import { store } from "./redux/store";
 
 const App = () => {
-  const isDarkMode = useColorScheme() === "dark";
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter
-  };
-
   return (
     <Provider store={store}>
-      <SafeAreaView style={backgroundStyle}>
-        <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
+      <SafeAreaView style={Colors.lighter}>
+        <StatusBar barStyle={"dark-content"} />
         <NewsList />
       </SafeAreaView>
     </Provider>
